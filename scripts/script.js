@@ -46,6 +46,8 @@ const locationArray = document.querySelector(".location-array");
 
 const onDetailPage = bigImage && nameText && placeText;
 
+const returnBtn = document.getElementById("return")
+
 // ===========================================================
 // DETAIL PAGE LOGIC
 // ===========================================================
@@ -197,5 +199,6 @@ function timeFormat(seconds) {
   return `${h}:${m}:${s}`;
 }
 
-
-
+returnBtn.addEventListener("click", function () {
+  window.history.back();
+});

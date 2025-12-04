@@ -1,6 +1,12 @@
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const preview = document.getElementById('preview');
+const filter1 = document.getElementById('filter1');
+const filter2 = document.getElementById('filter2');
+const filter3 = document.getElementById('filter3');
+const filter4 = document.getElementById('filter4');
+const filter5 = document.getElementById('filter5');
+const filter6 = document.getElementById('filter6');
 
 // Functie om camera te starten
 async function startCamera() {
@@ -50,10 +56,24 @@ if (preview) {
     const capturedPhoto = localStorage.getItem('capturedPhoto');
     if (capturedPhoto) {
         preview.src = capturedPhoto;
+        filter1.src = capturedPhoto;
+        filter2.src = capturedPhoto;
+        filter3.src = capturedPhoto;
+        filter4.src = capturedPhoto;
+        filter5.src = capturedPhoto;
+        filter6.src = capturedPhoto;
     } else {
         preview.alt = "No photo captured yet.";
     }
 }
+
+document.querySelectorAll('.filters button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const img = btn.querySelector('img');
+        preview.style.filter = getComputedStyle(img).filter;
+    });
+});
+
 
 // Start camera alleen als er een video element is
 startCamera();
