@@ -1,3 +1,5 @@
+const captureHtml = document.querySelector('.capture-wrapper')
+const filterHtml = document.querySelector('.addfilter')
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const preview = document.getElementById('preview');
@@ -77,3 +79,18 @@ document.querySelectorAll('.filters button').forEach(btn => {
 
 // Start camera alleen als er een video element is
 startCamera();
+
+// capture html weg
+if (captureHtml) {
+    captureHtml.classList.add('hide');
+}
+
+// filters html weg
+if (captureHtml) {
+    captureHtml.classList.add('hide');
+}
+
+// preview html weg
+if (captureHtml) {
+    captureHtml.classList.add('hide');
+}
