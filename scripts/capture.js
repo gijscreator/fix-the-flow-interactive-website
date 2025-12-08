@@ -4,7 +4,6 @@ const cameraView = document.getElementById('camera-view');
 const editorView = document.getElementById('editor-view');
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-const captureBtn = document.getElementById('captureBtn');
 const retakeBtn = document.getElementById('retakeBtn');
 const preview = document.getElementById('preview');
 const filterThumbnails = document.querySelectorAll('.filters button img'); 
