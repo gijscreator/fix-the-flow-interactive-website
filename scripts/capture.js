@@ -1,35 +1,45 @@
-const captureHtml = document.querySelector('.capture-wrapper')
-const filterHtml = document.querySelector('.addfilter')
+
+// --- 1. Select Everything ---
+const cameraView = document.getElementById('camera-view');
+const editorView = document.getElementById('editor-view');
+
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
-const preview = document.getElementById('preview');
-const filter1 = document.getElementById('filter1');
-const filter2 = document.getElementById('filter2');
-const filter3 = document.getElementById('filter3');
-const filter4 = document.getElementById('filter4');
-const filter5 = document.getElementById('filter5');
-const filter6 = document.getElementById('filter6');
+const captureBtn = document.getElementById('captureBtn');
+const retakeBtn = document.getElementById('retakeBtn');
 
-// Functie om camera te starten
+const preview = document.getElementById('preview');
+// Select all images inside the filter buttons
+const filterThumbnails = document.querySelectorAll('.filters button img'); 
+const filterButtons = document.querySelectorAll('.filters button');
+
+// --- 2. Start Camera Function ---
 async function startCamera() {
-    if (!video) return; // als er geen video element is, stop
+    if (!video) return; 
     try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } });
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+            video: { facingMode: "environment" } 
+        });
         video.srcObject = stream;
         await video.play();
     } catch (err) {
-        console.error("Camera cannot be started:", err);
-        alert("Camera access is required to take a photo.");
+        console.error("Camera error:", err);
+        alert("Please allow camera access.");
     }
 }
 
-// Foto maken
-if (captureBtn && video && canvas) {
+// --- 3. Capture Button Logic ---
+if (captureBtn) {
     captureBtn.addEventListener('click', () => {
+        if (!video) return;
+
+        // A. Draw video frame to canvas
         const size = Math.min(video.videoWidth, video.videoHeight);
         canvas.width = size;
         canvas.height = size;
         const ctx = canvas.getContext('2d');
+        
+        // Crop center square
         ctx.drawImage(
             video,
             (video.videoWidth - size) / 2,
@@ -39,58 +49,49 @@ if (captureBtn && video && canvas) {
             size, size
         );
 
-        // Opslaan in localStorage
+        // B. Create Image URL
         const dataURL = canvas.toDataURL('image/png');
-        localStorage.setItem('capturedPhoto', dataURL);
 
-        // Camera stoppen
+        // C. Show image in Preview AND all Filter buttons
+        if (preview) preview.src = dataURL;
+        filterThumbnails.forEach(img => img.src = dataURL);
+
+        // D. Stop the Camera (Turn off light/save battery)
         if (video.srcObject) {
             video.srcObject.getTracks().forEach(track => track.stop());
         }
 
-        // Ga naar filterpagina
-        window.location.href = 'addfilter.html';
+        // E. SWITCH VIEW: Hide Camera -> Show Editor
+        cameraView.classList.add('hide');
+        editorView.classList.remove('hide');
     });
 }
 
-// Als er een preview element is, laad de foto
-if (preview) {
-    const capturedPhoto = localStorage.getItem('capturedPhoto');
-    if (capturedPhoto) {
-        preview.src = capturedPhoto;
-        filter1.src = capturedPhoto;
-        filter2.src = capturedPhoto;
-        filter3.src = capturedPhoto;
-        filter4.src = capturedPhoto;
-        filter5.src = capturedPhoto;
-        filter6.src = capturedPhoto;
-    } else {
-        preview.alt = "No photo captured yet.";
-    }
+// --- 4. "Change Picture" Logic ---
+if (retakeBtn) {
+    retakeBtn.addEventListener('click', () => {
+        // A. SWITCH VIEW: Hide Editor -> Show Camera
+        editorView.classList.add('hide');
+        cameraView.classList.remove('hide');
+        
+        // B. Clear any filter currently applied to the preview
+        if(preview) preview.style.filter = 'none';
+
+        // C. Restart Camera
+        startCamera();
+    });
 }
 
-document.querySelectorAll('.filters button').forEach(btn => {
+// --- 5. Filter Selection Logic ---
+filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        const img = btn.querySelector('img');
-        preview.style.filter = getComputedStyle(img).filter;
+        const imgInsideBtn = btn.querySelector('img');
+        // Apply the filter style from the button to the main preview
+        if (preview && imgInsideBtn) {
+            preview.style.filter = getComputedStyle(imgInsideBtn).filter;
+        }
     });
 });
 
-
-// Start camera alleen als er een video element is
+// --- 6. Initialize on Load ---
 startCamera();
-
-// capture html weg
-if (captureHtml) {
-    captureHtml.classList.add('hide');
-}
-
-// filters html weg
-if (captureHtml) {
-    captureHtml.classList.add('hide');
-}
-
-// preview html weg
-if (captureHtml) {
-    captureHtml.classList.add('hide');
-}
