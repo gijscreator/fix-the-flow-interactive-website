@@ -1,19 +1,16 @@
 
-// --- 1. Select Everything ---
+// Alle dom elementen selecteren
 const cameraView = document.getElementById('camera-view');
 const editorView = document.getElementById('editor-view');
-
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const captureBtn = document.getElementById('captureBtn');
 const retakeBtn = document.getElementById('retakeBtn');
-
 const preview = document.getElementById('preview');
-// Select all images inside the filter buttons
 const filterThumbnails = document.querySelectorAll('.filters button img'); 
 const filterButtons = document.querySelectorAll('.filters button');
 
-// --- 2. Start Camera Function ---
+// Start de camera
 async function startCamera() {
     if (!video) return; 
     try {
@@ -28,7 +25,7 @@ async function startCamera() {
     }
 }
 
-// --- 3. Capture Button Logic ---
+// Capture button
 if (captureBtn) {
     captureBtn.addEventListener('click', () => {
         if (!video) return;
@@ -67,7 +64,8 @@ if (captureBtn) {
     });
 }
 
-// --- 4. "Change Picture" Logic ---
+// foto veranderen
+
 if (retakeBtn) {
     retakeBtn.addEventListener('click', () => {
         // A. SWITCH VIEW: Hide Editor -> Show Camera
