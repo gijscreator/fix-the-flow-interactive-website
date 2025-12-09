@@ -46,8 +46,6 @@ const locationArray = document.querySelector(".location-array");
 
 const onDetailPage = bigImage && nameText && placeText;
 
-const returnBtn = document.getElementById("return")
-
 // ===========================================================
 // DETAIL PAGE LOGIC
 // ===========================================================
@@ -131,6 +129,8 @@ else if (gallery) {
     button.addEventListener("click", () => {
       gallery.classList.toggle("images-grid");
       gallery.classList.toggle("images-list");
+
+      console.log("yes! you clicked me")
     });
   }
 }
@@ -198,7 +198,3 @@ function timeFormat(seconds) {
   const s = String(seconds % 60).padStart(2, "0");
   return `${h}:${m}:${s}`;
 }
-
-returnBtn.addEventListener("click", function () {
-  window.history.back();
-});

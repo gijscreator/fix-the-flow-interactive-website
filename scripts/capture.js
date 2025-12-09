@@ -29,13 +29,13 @@ if (captureBtn) {
     captureBtn.addEventListener('click', () => {
         if (!video) return;
 
-        // A. Draw video frame to canvas
+        // Video frame in het canvas
         const size = Math.min(video.videoWidth, video.videoHeight);
         canvas.width = size;
         canvas.height = size;
         const ctx = canvas.getContext('2d');
         
-        // Crop center square
+        // midden definieren
         ctx.drawImage(
             video,
             (video.videoWidth - size) / 2,
@@ -45,19 +45,19 @@ if (captureBtn) {
             size, size
         );
 
-        // B. Create Image URL
+        // afbeelding url maken
         const dataURL = canvas.toDataURL('image/png');
 
-        // C. Show image in Preview AND all Filter buttons
+        // tweede stap preview en filters laten zien
         if (preview) preview.src = dataURL;
         filterThumbnails.forEach(img => img.src = dataURL);
 
-        // D. Stop the Camera (Turn off light/save battery)
+        // camera stopt
         if (video.srcObject) {
             video.srcObject.getTracks().forEach(track => track.stop());
         }
 
-        // E. SWITCH VIEW: Hide Camera -> Show Editor
+        // camera weg filters erbij
         cameraView.classList.add('hide');
         editorView.classList.remove('hide');
     });
@@ -67,28 +67,28 @@ if (captureBtn) {
 
 if (retakeBtn) {
     retakeBtn.addEventListener('click', () => {
-        // A. SWITCH VIEW: Hide Editor -> Show Camera
+        // editor naar camera
         editorView.classList.add('hide');
         cameraView.classList.remove('hide');
         
-        // B. Clear any filter currently applied to the preview
+        // filters weghalen
         if(preview) preview.style.filter = 'none';
 
-        // C. Restart Camera
+        // camera herstarten
         startCamera();
     });
 }
 
-// --- 5. Filter Selection Logic ---
+// filters
 filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const imgInsideBtn = btn.querySelector('img');
-        // Apply the filter style from the button to the main preview
+        // filters toepassen
         if (preview && imgInsideBtn) {
             preview.style.filter = getComputedStyle(imgInsideBtn).filter;
         }
     });
 });
 
-// --- 6. Initialize on Load ---
+// start de camera on load
 startCamera();
