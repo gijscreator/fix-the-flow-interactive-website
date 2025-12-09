@@ -294,7 +294,7 @@ header  {
   }
 }
 
-/* Main */
+/* ----------------------------  Main ---------------------------- */
 
 .main-home, .snappmap {
 
@@ -307,79 +307,79 @@ header  {
     }
   }
 
-  /* Grid View */
-
+  /* ---------------------------- Grid View ----------------------------  */
   article {
 
-  .images-grid {
+    .heading-snappmaps {
+      margin: 1rem .5rem;
+    }
+    .images-grid {
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100vw;
-    margin: 0 auto;
-    gap: 5px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100vw;
+      margin: 0 auto;
+      gap: 5px;
 
-    @media (min-width: 498px) {
-      grid-template-columns: 1fr 1fr 1fr;
+      @media (min-width: 498px) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @media (min-width: 798px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      @media (min-width: 1000px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      }
+      
+      figure > article {
+        display: none;
+      }
     }
 
-    @media (min-width: 798px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* List view */
+
+    .images-list {
+      display: flex;
+      flex-direction: column;
+
+      @media (min-width: 598px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @media (min-width: 1000px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      ul {
+        display: flex;
+        gap: 10%;
+      }
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          width: var(--svg-medium);
+          height: auto;
+        }
+      }
+
+      figure *:not(img) {
+        color: var(--nav-neutral);
+      }
+
+      h4 {
+        color: var(--nav-neutral);
+      }
     }
-
-    @media (min-width: 1000px) {
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    
-    figure > article {
-      display: none;
-    }
-  }
-
-  /* List view */
-
-  .images-list {
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 598px) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @media (min-width: 1000px) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  ul {
-    display: flex;
-    gap: 10%;
-  }
-
-  li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      width: var(--svg-medium);
-      height: auto;
-    }
-  }
-
-  figure *:not(img) {
-    color: var(--nav-neutral);
-  }
-
-  h4 {
-    color: var(--nav-neutral);
   }
 }
-}
-}
 
-  .heading-snappmaps {
-    margin: 1rem .5rem;
-  }
+
 
 /* Footer */
 footer {
@@ -490,9 +490,6 @@ footer {
       border-radius: 0rem;
       outline: none;
     }
-
-
-
   }
 }
 
@@ -507,10 +504,8 @@ footer {
     justify-content: space-between;
     width: 90vw;
 
-    
   }
 }
-
 
 /* Detailpagina main */ 
 
@@ -518,28 +513,7 @@ footer {
 
   margin-bottom: 20vh;
   justify-content: center;
-  align-items: center;    
-
-  .snappmap-indicator {
-    margin: 20px;
-    display: flex;
-    place-self: start;
-    margin-bottom: 20px;
-    gap: 20px;
-    
-    svg {
-      width: var(--svg-small);
-      height: auto;
-      
-      path {
-        fill: var(--text-color-light);
-      }
-    }
-
-    h3 { 
-      color: var(--text-color-light);
-    }
-  }
+  align-items: center;
 
   img {
     width: 100vw;
@@ -550,11 +524,11 @@ footer {
     }
   }
 
-  .detail-wrapper {
+  article > .detail-wrapper {
     position: relative;
   }
 
-  .like-section {
+  article > .like-section {
     position: absolute;
     top: 50%;
     right: 5vw;
@@ -580,7 +554,7 @@ footer {
       }
     }
 
-  .like-section.open {
+   article > .like-section.open {
     width: 1rem;
     right: .1rem;
     border-radius: 1rem 0rem 0rem 1rem;
@@ -589,19 +563,18 @@ footer {
       display: none;
     }
 
-  .tab-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    article > .tab-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
-}
 
-  .tab-text {
+  article > .tab-text {
     display: none;
     writing-mode: vertical-rl;
     font-size: var(--font-size-paragraph);
   }
-
 
   figure {
     display: flex;
@@ -632,7 +605,7 @@ footer {
     }
   }
 
-  .more-from {
+  section > .more-from {
     display: flex;
     flex-direction: column;
     justify-content: center;
