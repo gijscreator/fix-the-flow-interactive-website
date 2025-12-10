@@ -54,10 +54,6 @@ path, svg {
   fill: var(--white);
 }
 
-button, a {
-  all: unset;
-}
-
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -422,6 +418,8 @@ footer {
 
         svg.active > path {
           fill: var(--accent-lightest);
+          transition: fill .4s ease;
+
         }
         
         p {
@@ -1210,10 +1208,20 @@ fill: var(--active-tomato);
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 
-.hide {
-  display: none !important;
+@keyframes detail {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
 }
+
+
+
+/* ------------------------------------ Memorie ------------------------------------*/
+

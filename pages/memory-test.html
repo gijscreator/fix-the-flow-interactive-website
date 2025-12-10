@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Game with Images</title>
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 20px;
+  }
+
+  #memory {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .images-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 10px;
+  }
+
+  .card {
+    perspective: 1000px;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .card-front img, .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1em;
+  }
+
+  .images-grid.images-grid-memory {
+    border: 2px dashed #4CAF50;
+    padding: 10px;
+    border-radius: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div id="memory">Memory Mode</div>
+
+<div class="images-grid">
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://picsum.photos/id/1015/120/120" alt="Image 1">
+      </div>
+      <div class="card-back">
+        Memory 1
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://picsum.photos/id/1025/120/120" alt="Image 2">
+      </div>
+      <div class="card-back">
+        Memory 2
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://picsum.photos/id/1035/120/120" alt="Image 3">
+      </div>
+      <div class="card-back">
+        Memory 3
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-inner">
+      <div class="card-front">
+        <img src="https://picsum.photos/id/1045/120/120" alt="Image 4">
+      </div>
+      <div class="card-back">
+        Memory 4
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const galerij = document.querySelector(".images-grid");
+  const memoryBtn = document.getElementById("memory");
+  let memoryMode = false;
+
+  // Toggle memory mode
+  memoryBtn.addEventListener("click", () => {
+    memoryMode = !memoryMode;
+    galerij.classList.toggle("images-grid-memory", memoryMode);
+    console.log(memoryMode ? "Memory mode ON" : "Memory mode OFF");
+  });
+
+  // Handle card clicks
+  galerij.addEventListener("click", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
+
+    if (!memoryMode) {
+      alert("Memory");
+      return;
+    }
+
+    card.classList.toggle("flipped");
+  });
+</script>
+
+</body>
+</html>
