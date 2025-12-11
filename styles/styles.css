@@ -1141,7 +1141,7 @@ fill: var(--active-tomato);
 /* ---------------------------------addfilter page-----------------------------------*/
 
 .addfilter {
-
+  
   article:nth-of-type(1) {
     img {
       width: 100vw;
@@ -1241,4 +1241,9 @@ fill: var(--active-tomato);
 
 
 /* ------------------------------------ Memorie ------------------------------------*/
+
+/* utility hide class used by capture page and other toggles */
+.hide {
+  display: none !important;
+}
 
