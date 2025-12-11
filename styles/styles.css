@@ -203,10 +203,15 @@ header  {
     ul {
       font-size: var(--font-size-paragraph);
 
+      li {
+        width: 100%;
+      }
+
       li > button {
         display: flex;
         align-content: center;
         gap: 0.5rem;
+        width: 100%;
       }
 
       button {
@@ -292,7 +297,7 @@ header  {
 
 /* ----------------------------  Main ---------------------------- */
 
-.main-home, .snappmap {
+.main-home, .snappmap, .main-zoeken {
 
   figure:nth-of-type(1) {
     display: flex;
@@ -538,11 +543,11 @@ footer {
     position: relative;
   }
 
-  article > .like-section {
+  /* article > .like-section {
     position: absolute;
     top: 50%;
-    right: 5vw;
-    transform: translate(10%, -50%);
+    right: 7vw;
+    transform: translate(50%, -100%);
     display: flex;
     flex-direction: column;
     gap: 3vh;
@@ -573,18 +578,18 @@ footer {
       display: none;
     }
 
-    article > .tab-text {
+    .tab-text {
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
 
-  article > .tab-text {
+  .tab-text {
     display: none;
     writing-mode: vertical-rl;
     font-size: var(--font-size-paragraph);
-  }
+  } */
 
   figure {
     display: flex;
