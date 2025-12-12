@@ -1216,17 +1216,23 @@ fill: var(--active-tomato);
 
     article {
       display: flex;
+      max-width: 100vw;
     }
 
     figure {
       display: flex;
       order: 1;
+
+      img {
+        width: 55vw;
+      }
     }
 
     figcaption {
       display: flex;
       flex-direction: column;
       order: 2;
+      width: 45vw;
     }
 
     ul {
@@ -1241,8 +1247,8 @@ fill: var(--active-tomato);
       }
     }
 
-    button {
-
+    a {
+      width: 50%;
     }
     
     svg {
