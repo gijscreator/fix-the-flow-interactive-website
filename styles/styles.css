@@ -1151,7 +1151,7 @@ fill: var(--active-tomato);
 
   article:nth-of-type(2) {
     display: flex;
-    flex-wrap: wrap;
+    overflow: scroll;
     justify-content: center;
     gap: 5vw;
     max-width: 100vw;
