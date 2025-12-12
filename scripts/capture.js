@@ -13,6 +13,7 @@ const submit = document.getElementById('submitBtn');
 const submitField = document.querySelector('.submit');
 const submitPreview = document.getElementById('submit-preview');
 const changePictureSubmitBtn = document.getElementById('changePictureSubmitBtn');
+const images = document.querySelector('.images');
 
 // Start cam
 async function startCamera() {
@@ -105,6 +106,7 @@ if (submit) {
     if (cameraView) cameraView.classList.add('hide');
     if (editorView) editorView.classList.add('hide');
     if (submitField) submitField.classList.remove('hide');
+    if (images) images.classList.remove('hide');
 
     // ensure submitted preview has the captured image
     if (submitPreview) {
