@@ -14,7 +14,7 @@ const submitField = document.querySelector('.submit');
 const submitPreview = document.getElementById('submit-preview');
 const changePictureSubmitBtn = document.getElementById('changePictureSubmitBtn');
 
-// Start camera
+// Start cam
 async function startCamera() {
   if (!video) return;
   try {
