@@ -1,4 +1,3 @@
-// Query DOM directly (works when script is loaded with `defer` or placed at end of body)
 const cameraView = document.getElementById('camera-view');
 const editorView = document.getElementById('editor-view');
 const video = document.getElementById('video');

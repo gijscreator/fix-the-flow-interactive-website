@@ -1230,11 +1230,14 @@ fill: var(--active-tomato);
     }
 
     ul {
-      gap: 2rem;
+      display: flex;
+      flex-direction: column;
+      place-self: left;
+      gap: .5rem;
 
       li {
         display: flex;
-        gap: .5rem;
+        gap: .3rem;
       }
     }
 
