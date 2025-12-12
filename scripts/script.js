@@ -199,13 +199,3 @@ function timeFormat(seconds) {
   const s = String(seconds % 60).padStart(2, "0");
   return `${h}:${m}:${s}`;
 }
-
-const galerij = document.querySelector(".images-grid")
-
-memory.addEventListener('click', memorySpelen)
-
-function memorySpelen () {
-  galerij.classList.toggle('images-grid-memory')
-}
-
-galerij.addEventListener('animationend', memorySpelen)

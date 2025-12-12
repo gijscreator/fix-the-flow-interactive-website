@@ -1103,7 +1103,7 @@ fill: var(--active-tomato);
   }
 }
 
-/* ---------------------------------Capture page-----------------------------------*/
+/* ---------------------------------Capture bit-----------------------------------*/
 
 .capture-main {
 
@@ -1138,7 +1138,7 @@ fill: var(--active-tomato);
 }
 
 
-/* ---------------------------------addfilter page-----------------------------------*/
+/* ---------------------------------addfilter bit-----------------------------------*/
 
 .addfilter {
   
@@ -1204,6 +1204,50 @@ fill: var(--active-tomato);
       padding: 4vw;
       border-radius: 25px;
       text-align: center;
+    }
+  }
+
+  /* ---------------------------------submit bit-----------------------------------*/
+
+  .submit {
+    h2 {
+      text-align: left;
+    }
+
+    article {
+      display: flex;
+    }
+
+    figure {
+      display: flex;
+      order: 1;
+    }
+
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      order: 2;
+    }
+
+    ul {
+      gap: 2rem;
+
+      li {
+        display: flex;
+        gap: .5rem;
+      }
+    }
+
+    button {
+
+    }
+    
+    svg {
+      fill: var(--nav-neutral);
+
+      path {
+        fill: var(--nav-neutral);
+      }
     }
   }
 
