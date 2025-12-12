@@ -193,11 +193,6 @@ header  {
     } 
   }
 
-  /* list-all-snapps */
-  li:nth-child(2) details {
-
-  }
-
   /* gridlist */
   li:nth-child(5) details {
     ul {
@@ -540,55 +535,7 @@ footer {
   article > .detail-wrapper {
     position: relative;
   }
-
-  /* article > .like-section {
-    position: absolute;
-    top: 50%;
-    right: 7vw;
-    transform: translate(50%, -100%);
-    display: flex;
-    flex-direction: column;
-    gap: 3vh;
-    padding: 1rem;
-    background-color: var(--white) ;
-    border-radius:25px;
-    color: var(--text-color-light);
-    transition: all 1s ease;
-    cursor: pointer;
-   
-
-      svg {
-        width: var(--svg-nav);
-        height: auto;
-
-        path {
-          fill: var(--nav-neutral)
-        }
-      }
-    }
-
-   article > .like-section.open {
-    width: 1rem;
-    right: .1rem;
-    border-radius: 1rem 0rem 0rem 1rem;
-
-    li:not(.tab-text) {
-      display: none;
-    }
-
-    .tab-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  .tab-text {
-    display: none;
-    writing-mode: vertical-rl;
-    font-size: var(--font-size-paragraph);
-  } */
-
+  
   figure {
     display: flex;
     place-self: center;
@@ -1307,8 +1254,6 @@ fill: var(--active-tomato);
     transform: scale(1.2);
   }
 }
-
-
 
 /* ------------------------------------ Memorie ------------------------------------*/
 
