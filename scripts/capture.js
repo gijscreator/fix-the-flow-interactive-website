@@ -25,6 +25,16 @@ async function startCamera() {
     await video.play();
   } catch (err) {
     console.error("Camera error:", err);
+    // if user denied permission, notify and go back to previous page
+    const denied = err && (
+      err.name === 'NotAllowedError' ||
+      err.name === 'PermissionDeniedError' ||
+      /denied/i.test(err.message)
+    );
+    if (denied) {
+      history.back();
+      return;
+    }
   }
 }
 
