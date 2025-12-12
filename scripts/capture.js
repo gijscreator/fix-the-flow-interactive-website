@@ -1,15 +1,20 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 const cameraView = document.getElementById('camera-view');
 const editorView = document.getElementById('editor-view');
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
+const captureBtn = document.getElementById('captureBtn');
 const retakeBtn = document.getElementById('retakeBtn');
 const preview = document.getElementById('preview');
 const filterThumbnails = document.querySelectorAll('.filters button img');
 const filterButtons = document.querySelectorAll('.filters button');
 const submit = document.getElementById('submitBtn');
-const submitField = document.querySelector('.submit')
+const submitField = document.querySelector('.submit');
+const submitPreview = document.getElementById('submit-preview');
+const changePictureSubmitBtn = document.getElementById('changePictureSubmitBtn');
 
-// Start de camera
+// Start camera
 async function startCamera() {
   if (!video) return;
   try {
@@ -20,24 +25,25 @@ async function startCamera() {
     await video.play();
   } catch (err) {
     console.error("Camera error:", err);
-    alert("Please allow camera access.");
   }
 }
 
-// Capture button
+// Neem de foto
 if (captureBtn) {
   captureBtn.addEventListener('click', () => {
     if (!video || !canvas) return;
 
-    const size = Math.min(video.videoWidth, video.videoHeight);
+    const vw = video.videoWidth || 640;
+    const vh = video.videoHeight || 480;
+    const size = Math.min(vw, vh) || 500;
     canvas.width = size;
     canvas.height = size;
-    const ctx = canvas.getContext('2d');
+    const dcanvas = canvas.getContext('2d');
 
-    ctx.drawImage(
+    dcanvas.drawImage(
       video,
-      (video.videoWidth - size) / 2,
-      (video.videoHeight - size) / 2,
+      (vw - size) / 2,
+      (vh - size) / 2,
       size, size,
       0, 0,
       size, size
@@ -45,9 +51,14 @@ if (captureBtn) {
 
     const dataURL = canvas.toDataURL('image/png');
 
+    // set editor preview and submitted preview
     if (preview) preview.src = dataURL;
+    if (submitPreview) submitPreview.src = dataURL;
+
+    // update thumbnails if any
     filterThumbnails.forEach(img => { if (img) img.src = dataURL; });
 
+    // stop camera
     if (video.srcObject) {
       video.srcObject.getTracks().forEach(track => track.stop());
       video.srcObject = null;
@@ -58,7 +69,7 @@ if (captureBtn) {
   });
 }
 
-// Retake button
+// Retake
 if (retakeBtn) {
   retakeBtn.addEventListener('click', () => {
     if (editorView) editorView.classList.add('hide');
@@ -78,15 +89,32 @@ filterButtons.forEach(btn => {
   });
 });
 
-// Submit
+// Submit -> show submitted state (ensure image present)
 if (submit) {
   submit.addEventListener('click', () => {
     if (cameraView) cameraView.classList.add('hide');
     if (editorView) editorView.classList.add('hide');
     if (submitField) submitField.classList.remove('hide');
-    console.log('im working');
+
+    // ensure submitted preview has the captured image
+    if (submitPreview) {
+      if (preview && preview.src) submitPreview.src = preview.src;
+      else submitPreview.src = canvas.toDataURL ? canvas.toDataURL('image/png') : '';
+    }
   });
 }
 
-// Start camera immediately (defer ensures DOM exists)
+// Change picture on submitted screen -> back to editor
+if (changePictureSubmitBtn) {
+  changePictureSubmitBtn.addEventListener('click', () => {
+    if (submitField) submitField.classList.add('hide');
+    if (editorView) editorView.classList.remove('hide');
+    // keep the same preview visible in editor
+    if (preview && submitPreview) preview.src = submitPreview.src || preview.src;
+  });
+}
+
+// Start camera (works when script is deferred)
 startCamera();
+
+});
