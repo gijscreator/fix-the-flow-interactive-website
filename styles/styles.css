@@ -50,6 +50,10 @@ path, svg {
   fill: var(--white);
 }
 
+button, a {
+  cursor: pointer;
+}
+
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -1272,6 +1276,27 @@ fill: var(--active-tomato);
 
 /* ---------------------------------Welcome - sign up -----------------------------------*/
 
+.welcome-header {
+
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+
+    svg {
+      margin-left: 1rem;
+      width: 3rem;
+      height: auto;
+
+      path {
+        fill: var(--white)
+      }
+    } 
+  }
+}
+
 .welcome {
 
   display: flex;
@@ -1283,7 +1308,7 @@ fill: var(--active-tomato);
   padding: 1rem;
 
   p {
-    max-width: 60vw;
+    max-width: 70vw;
     padding: 1rem 0rem;
   }
 
@@ -1291,16 +1316,6 @@ fill: var(--active-tomato);
     display: flex;
     flex-direction: column;
     align-items: left;
-
-    svg {
-      margin-bottom: 2rem;
-      width: 30vw;
-      height: auto;
-
-      path {
-        fill: var(--accent-lightest)
-      }
-    } 
 
     form {
 
@@ -1345,7 +1360,14 @@ fill: var(--active-tomato);
   }
 
   section:nth-of-type(2) {
+    background-color: var(--active-svg)
+  }
 
+  section:nth-of-type(3) {
+
+    a {
+      color: var(--accent-neutral);
+    }
   }
 
 }
