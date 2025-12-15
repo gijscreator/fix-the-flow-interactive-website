@@ -12,7 +12,7 @@
 
 html {
   background-color: var(--white);
-  color: var(--nav-neutral);
+ color: var(--font-color-dark);;
   font-size: var(--font-size-small);
 }
 
@@ -46,7 +46,7 @@ img {
   height: auto;
 }
 
-.icon {
+svg {
   width: 1rem;
   height: 1rem;
 }
@@ -377,11 +377,11 @@ header  {
     }
 
     figure *:not(img) {
-      color: var(--nav-neutral);
+     color: var(--font-color-dark);;
     }
 
     h4 {
-      color: var(--nav-neutral);
+     color: var(--font-color-dark);;
     }
   }
 }
@@ -477,7 +477,7 @@ footer {
     border-radius: var(--border-radius-big);
     min-height: 20px;
     height: 6vh;
-    color: black;
+    color: var(--font-color-dark);
     caret-color: var(--nav-neutral);
     transition: all 1s ease;
     border: 2px solid var(--nav-neutral);
@@ -599,7 +599,8 @@ footer {
       justify-content: space-between;
 
       h3 {
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-medium);
+        margin-bottom: .2rem;
       }
 
       a {
@@ -617,15 +618,19 @@ footer {
         @media (min-width: 798px) {
           display: none;
         }
+
+        path {
+          fill: var(--font-color-dark);
+        }
       }
     }
 
     .more-location {
-      background-color: var(--primary-bg-lightest);
+      background-color: var(--secondary-bg-lightest);
       color: var(--font-color-dark);
       width: 100vw;
-      margin-top:1rem;
-      padding: 0vw 5vw 2vw 5vw;
+      margin-top: 1rem;
+      padding: 3vw 2.1vw;
 
       figure {
         background-color: transparent;
@@ -722,7 +727,7 @@ fill: var(--active-tomato);
       height: auto;
 
       path {   
-        fill: var(--nav-neutral);
+        fill: var(--font-color-dark);
       }
     }
 
@@ -735,12 +740,12 @@ fill: var(--active-tomato);
       flex-direction: column;
       
       h4 {
-        color:var(--nav-neutral);
+       color: var(--font-color-dark);
         font-size: var(--font-size-medium);
       }
 
       p {
-        color:var(--nav-neutral);
+       color: var(--font-color-dark);
         font-size: var(--font-size-paragraph);
       }
       .active {
@@ -870,11 +875,11 @@ fill: var(--active-tomato);
 
     a {
       text-decoration: none;
-      color: var(--nav-neutral);
+     color: var(--font-color-dark);;
     }
 
     path {
-      fill: var(--nav-neutral);
+      fill: var(--font-color-dark);
     }
   }
 
@@ -924,14 +929,14 @@ fill: var(--active-tomato);
   place-self: center;
   justify-content: center;
   text-decoration: none;
-  color: var(--nav-neutral);
+ color: var(--font-color-dark);;
 
   svg {
     width: 20px;
     height: auto;
 
     path {
-      fill: var(--nav-neutral);
+      fill: var(--font-color-dark);
     }
   }
 }
@@ -1233,10 +1238,10 @@ fill: var(--active-tomato);
     }
     
     svg {
-      fill: var(--nav-neutral);
+      fill: var(--font-color-dark);
 
       path {
-        fill: var(--nav-neutral);
+        fill: var(--font-color-dark);
       }
     }
   }

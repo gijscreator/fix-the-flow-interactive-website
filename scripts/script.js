@@ -76,7 +76,7 @@ if (onDetailPage) {
   }
 
   if (locationArray) {
-    locationArray.innerHTML = pictures.slice(0, 5).map(makeThumbHTML).join("");
+    locationArray.innerHTML = pictures.slice(3, 8).map(makeThumbHTML).join("");
   }
 
   const likeBtn = document.querySelector(".like-button");
