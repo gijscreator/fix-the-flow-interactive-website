@@ -34,7 +34,11 @@ const pictures = [
 // DOM Elements
 // ---------------------------
 const gallery = document.querySelector("article.images ul");
-const button = document.querySelector(".grid-list-toggle");
+const xlGrid = document.querySelector(".xl-toggle");
+const lGrid = document.querySelector(".l-toggle");
+const mGrid = document.querySelector(".m-toggle");
+const sGrid = document.querySelector(".s-toggle");
+const listToggle = document.querySelector(".list-toggle");
 
 const bigImage = document.getElementById("detail-image");
 const nameText = document.getElementById("detail-name");
@@ -129,9 +133,10 @@ else if (gallery) {
     button.addEventListener("click", () => {
       gallery.classList.toggle("images-grid");
       gallery.classList.toggle("images-list");
-
-      console.log("yes! you clicked me")
     });
+  }
+  if (imagerid) {
+    
   }
 }
 
