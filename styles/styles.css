@@ -1,4 +1,5 @@
 /* ---------------------------------General styling-----------------------------------*/
+:root { view-transition-name: root; }
 
 *,
 *::before,
@@ -535,7 +536,7 @@ footer {
   article > .detail-wrapper {
     position: relative;
   }
-  
+
   figure {
     display: flex;
     place-self: center;
@@ -633,7 +634,7 @@ footer {
     }
   }
 
-  button {
+  button, a {
     all: unset;
     cursor: pointer;
   }
@@ -1262,3 +1263,35 @@ fill: var(--active-tomato);
   display: none !important;
 }
 
+/* outgoing page */
+::view-transition-old(root) {
+  animation: slide-out 0.45s ease-in forwards;
+}
+
+/* incoming page */
+::view-transition-new(root) {
+  animation: slide-in 0.45s ease-out forwards;
+}
+
+/* Keyframes */
+@keyframes slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
