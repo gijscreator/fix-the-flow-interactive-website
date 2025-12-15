@@ -481,6 +481,11 @@ footer {
     caret-color: var(--nav-neutral);
     transition: all 1s ease;
     border: 2px solid var(--nav-neutral);
+    background-image: url("/assets/search-icon.png");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    background-size: 1.5rem;
+    padding-left: 1rem;
 
     &::placeholder {
       font-size: var(--font-size-paragraph);
@@ -496,6 +501,12 @@ footer {
       border: 2px solid var(--nav-neutral);
       border-radius: 0rem;
       outline: none;
+    }
+    
+    &::before {
+      content: url("/assets/autofiat.jpg");
+      width: 20px;
+      height: 20px;
     }
   }
 }
@@ -984,7 +995,7 @@ fill: var(--active-tomato);
 
 .snappmap {
 
-  .button-link {
+  .capture-button {
       display: flex;
       justify-content: center;
       margin-top: 1rem;

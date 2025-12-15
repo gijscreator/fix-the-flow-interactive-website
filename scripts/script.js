@@ -104,9 +104,8 @@ if (onDetailPage) {
   }
 }
 
-// ===========================================================
-// GALLERY PAGE LOGIC
-// ===========================================================
+// render alle plaatjes
+
 else if (gallery) {
   gallery.classList.add("images-grid");
 
@@ -136,22 +135,18 @@ else if (gallery) {
   }
 }
 
-// ---------------------------
-// Sticky Capture Button
-// ---------------------------
-const captureBtn = document.getElementById("captureBtn");
-const marginBtm = document.getElementById("images");
+/// sticky capture knoppie
+
+const captureBtn = document.querySelector(".capture-button");
 
 if (captureBtn) {
+  console.log('knoppie gevonden')
   window.addEventListener("scroll", () => {
     captureBtn.classList.toggle("sticky", window.scrollY > 0);
-    marginBtm.classList.toggle("sticky", window.scrollY > 0);
   });
 }
 
-// ===========================================================
-// CAMERA INPUT
-// ===========================================================
+// camear input veldje om fotos te maken
 const cameraInput = document.getElementById("cameraInput");
 if (cameraInput) {
   cameraInput.addEventListener("change", (event) => {
@@ -160,19 +155,17 @@ if (cameraInput) {
   });
 }
 
-// ===========================================================
-// LIKE TAB SLIDEOUT
-// ===========================================================
-const likee = document.querySelector(".like-section");
-if (likee) {
-  likee.addEventListener("click", () => {
-    likee.classList.toggle("open");
-  });
-}
+// like tab 
 
-// ===========================================================
-// COUNTDOWN TIMER
-// ===========================================================
+// const likee = document.querySelector(".like-section");
+// if (likee) {
+//   likee.addEventListener("click", () => {
+//     likee.classList.toggle("open");
+//   });
+// }
+
+// timer om af te tellen hoelang de gebruiker nog heeft
+
 const clock = document.getElementById("countdown");
 
 window.onload = () => {
