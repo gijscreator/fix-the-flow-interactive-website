@@ -1,8 +1,19 @@
-const passwordBtn = document.querySelector('.codepassword');
-const codeSection = document.querySelector('.welcome');
+const choosePassword = document.querySelector('.codepassword');
+const codeSection = document.querySelector('.codesignin');
+const passswordSection = document.querySelector('.choosepassword');
+const usernameSection =  document.querySelector('.chooseusername');
 
-passwordBtn.addEventListener('click', codeHandler);
+choosePassword.addEventListener('click', passwordBtnHandler);
 
-function codeHandler () {
-  codeSection.classList.toggle("hide");
+function passwordBtnHandler () {
+  codeSection.classList.add("hide")
+  passswordSection.classList.remove("hide");
 }
+
+choosePassword.addEventListener('click', passwordBtnHandler);
+
+function usernameBtnHandler () {
+  passswordSection.classList.add("hide")
+  usernameSection.classList.remove("hide");
+}
+

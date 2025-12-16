@@ -1278,22 +1278,25 @@ fill: var(--active-tomato);
 
 .welcome-header {
 
-
   section {
     display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
+    flex-direction: row;
+    align-items: center;
+    gap: 10vw;
 
     svg {
       margin-left: 1rem;
-      width: 3rem;
+      width: 2rem;
       height: auto;
 
       path {
         fill: var(--white)
       }
     } 
+
+    h1 {
+      font-size: var(--font-size-small)
+    }
   }
 }
 
@@ -1301,9 +1304,9 @@ fill: var(--active-tomato);
 
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: left;
-  text-align: left;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   min-height: 100vh;
   padding: 1rem;
 
@@ -1312,35 +1315,35 @@ fill: var(--active-tomato);
     padding: 1rem 0rem;
   }
 
+  form {
+
+    input {
+      width: 90vw;
+      height: 10vh;
+      max-height: 3rem;
+      border-radius: var(--border-radius-small);
+      border: 2px black solid;
+      padding-left: 5%;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: rgb(143, 143, 143);
+      }
+
+      &:focus {
+        border: green 2px solid;
+      }
+
+      &:active {
+        border: green 2px solid;
+      }
+    }
+  }
+
   section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
-    align-items: left;
-
-    form {
-
-      input {
-        width: 90vw;
-        height: 10vh;
-        max-height: 3rem;
-        border-radius: var(--border-radius-small);
-        border: 2px black solid;
-        padding-left: 5%;
-        font-size: 1rem;
-
-        &::placeholder {
-          color: rgb(143, 143, 143);
-        }
-
-        &:focus {
-          border: green 2px solid;
-        }
-
-        &:active {
-          border: green 2px solid;
-        }
-      }
-    }
+    align-items: center;
 
     button {
       background-color: var(--accent-neutral);
@@ -1349,14 +1352,18 @@ fill: var(--active-tomato);
       font-size: var(--font-size-paragraph);
       border-radius: var(--border-radius-big);
       width: 90vw;
-      height: 12vw;
+      height: 3rem;
     }
   }
 
-  a {
+  a:nth-of-type(1), a:nth-of-type(2) {
     text-align: center;
     text-decoration: underline;
     color: var(--text-color-dark);
+  }
+
+  a:nth-of-type(2) {
+    color: var(--accent-neutral);
   }
 
   section:nth-of-type(2) {
@@ -1365,14 +1372,9 @@ fill: var(--active-tomato);
 
   section:nth-of-type(3) {
 
-    a {
-      color: var(--accent-neutral);
-    }
   }
 
 }
-
-
 
 
 /* ---------------------------------Animations-----------------------------------*/
