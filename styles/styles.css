@@ -1355,20 +1355,20 @@ fill: var(--active-tomato);
     }
   }
 
+  button {
+    background-color: var(--accent-neutral);
+    border: none;
+    color: var(--white);
+    font-size: var(--font-size-paragraph);
+    border-radius: var(--border-radius-big);
+    width: 90vw;
+    height: 3rem;
+  }
+
   section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    button {
-      background-color: var(--accent-neutral);
-      border: none;
-      color: var(--white);
-      font-size: var(--font-size-paragraph);
-      border-radius: var(--border-radius-big);
-      width: 90vw;
-      height: 3rem;
-    }
   }
 
   a:nth-of-type(1), a:nth-of-type(2) {
