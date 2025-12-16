@@ -327,9 +327,6 @@ header  {
   .images-grid {
 
     display: grid;
-
-    /* fallback grid */
-
     grid-template-columns: 1fr 1fr;
     width: 100vw;
     margin: 0 auto;
@@ -1339,6 +1336,7 @@ fill: var(--active-tomato);
       border: 2px black solid;
       padding-left: 5%;
       font-size: 1rem;
+      margin-bottom: 1rem;
 
       &::placeholder {
         color: rgb(143, 143, 143);
@@ -1384,6 +1382,12 @@ fill: var(--active-tomato);
     }
   }
 
+  h2 {
+    font-size: var(--font-size-medium);
+    margin-top: 1rem;
+    width: 100vw;
+  }
+
   section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
@@ -1406,6 +1410,17 @@ fill: var(--active-tomato);
 
   section:nth-of-type(3) {
 
+  }
+
+  .slider {
+    display: flex; 
+    flex-direction: row;
+    overflow: scroll;
+    gap: 1rem;
+
+    img {
+      width: 80vw;
+    }
   }
 
 }
