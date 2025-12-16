@@ -1319,7 +1319,6 @@ fill: var(--active-tomato);
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 100vh;
@@ -1355,6 +1354,13 @@ fill: var(--active-tomato);
     }
   }
 
+  svg {
+    fill: black;
+    path {
+      fill: black;
+    }
+  }
+
   button {
     background-color: var(--accent-neutral);
     border: none;
@@ -1363,6 +1369,19 @@ fill: var(--active-tomato);
     border-radius: var(--border-radius-big);
     width: 90vw;
     height: 3rem;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+
+    svg {
+      width: 40vw;
+      height: 50vw;
+    }
   }
 
   section:nth-of-type(1) {
