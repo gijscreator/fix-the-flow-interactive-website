@@ -1286,7 +1286,7 @@ fill: var(--active-tomato);
   }
 
   main:has(.images):not(.detail-page) {
-    margin-bottom: 40vh;
+    margin-bottom: 35vh;
   }
 
 /* ---------------------------------Welcome - sign up -----------------------------------*/
