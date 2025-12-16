@@ -1,5 +1,4 @@
 /* ---------------------------------General styling-----------------------------------*/
-:root { view-transition-name: root; }
 
 *,
 *::before,
@@ -12,8 +11,42 @@
 
 html {
   background-color: var(--white);
- color: var(--font-color-dark);;
+  color: var(--font-color-dark);
   font-size: var(--font-size-small);
+  scroll-timeline: --page-scroll block;
+}
+
+/* 1. Base Animation */
+li > a > figure > img {
+  animation: fade-in-up linear both;
+  animation-timeline: view();
+  
+  /* Start animation when the image just peeks into view */
+  animation-range: entry 0% cover 30%; 
+  z-index: -1;
+}
+
+/* 2. Stagger Logic (Columns) */
+/* 2nd column waits a bit */
+li:nth-child(3n + 2) > a > figure > img {
+  animation-range: entry 10% cover 40%;
+}
+
+/* 3rd column waits even longer */
+li:nth-child(3n + 3) > a > figure > img {
+  animation-range: entry 20% cover 50%;
+}
+
+/* 3. Keyframes */
+@keyframes fade-in-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(100vh); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0vh); 
+  }
 }
 
 header, footer {
@@ -1404,6 +1437,28 @@ fill: var(--active-tomato);
     transform: scale(1.2);
   }
 }
+
+@keyframes grow-progress {
+  from {
+    transform: scaleY(0);
+  }
+  
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Fade-in van media */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(50vw);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
 /* ------------------------------------ Memorie ------------------------------------*/
 
