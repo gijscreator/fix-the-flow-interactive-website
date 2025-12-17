@@ -20,14 +20,40 @@ Hieronder heb ik een kort filmpje toegevoegd hoe alles eruit ziet en welke inter
 
 ## Sign up pagina
 
-https://github.com/gijscreator/fix-the-flow-interactive-website/blob/main/assets/Ontwerp%20zonder%20titel-10.mp4
+
+
+https://github.com/user-attachments/assets/102456ee-ac4a-4bb3-afe0-b7cfa6496533
+
+## Photo flow
+
+
+
+https://github.com/user-attachments/assets/762c1836-cefa-49f8-b9f8-de57d2ed9212
 
 
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? -->
 
+ik heb gebruik gemaakt van geneste css en een simpele html met sections. 
+Met javascript wordt er voor gezorgd dat de knoppen werken en alle sections op de juiste tijd worden weergegeven.
+In css heb ik gebruik gemaakt van classes en elementen. Alle css is genest, hierdoor is het overzichtelijk.
+
+belangrijk javascript:
+https://github.com/gijscreator/fix-the-flow-interactive-website/commit/3e97a5bb8011e1c0cffd9841ed453c97b8dbbf8f
+
+
+Belangrijke css:
+https://github.com/gijscreator/fix-the-flow-interactive-website/commit/22877c7bccc3d97f78622c49d8a7f8f2f0d5ab02
+
+
+Belangrijke html:
+https://github.com/gijscreator/fix-the-flow-interactive-website/commit/1675071bac17e3402bfa2035b385579ddbc50d90
+
+
 ## Bronnen
+https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications
+https://developer.mozilla.org/en-US/
 
 ## Licentie
 
