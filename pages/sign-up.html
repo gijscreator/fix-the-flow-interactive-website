@@ -25,36 +25,13 @@
             <h1>Welcome to snappthis!</h1>
             <p>
                 We’ve sent you an email with 
-                a 4 digits invitation code
+                your 4 digits invitation code
             </p>
             <form>
-                <input type="text" placeholder="Enter code (xxxx)">
+                <input type="text" placeholder="Enter code (xxxx)" required>
             </form>
             <button class="codepassword">Choose your password</button>
-            <a href="sign-in">or Log in</a>
-            <p>
-                Haven’t joined yet?
-                Register, create a group and invite others!
-            </p>
-            <a href="sign-in">Register now</a>
-        </section>
-
-        <!-- Second section, not sure yet-->
-        <section class="choosepassword hide">
-            <h2>Choose your password</h2>
-            <form>
-                <input type="text" placeholder="Your password">
-            </form>
-            <button class="passwordstep">Confirm your password</button>
-        </section>
-
-        <!-- Third section, text, and register link-->
-        <section class="chooseusername hide">
-            <h2>Choose your Username</h2>
-            <form>
-                <input type="text" placeholder="Your Username">
-            </form>
-            <button class="usernamestep">Confirm your username</button>
+            <p> Not your first time? <a href="sign-in"> Log in</a> </p> 
         </section>
 
         <section class="image-previews">
@@ -66,6 +43,82 @@
                 <img src="/assets/fietskind.jpg" alt="fiat in brazilië">
                 <img src="/assets/fietspad.jpg" alt="fiat in brazilië">
             </article>
+        </section>
+
+        <!-- Second section, not sure yet-->
+        <section class="choosepassword hide">
+            <h2>Choose your password</h2>
+            <form>
+                <input type="text" placeholder="Your password (at least 6 characters)">
+            </form>
+            <button class="passwordstep">Confirm your password</button>
+            <p>
+                You'll use your email adress: <span>domain@domain.com</span> and this password to sign into snappthis.
+            </p>
+        </section>
+
+        <!-- Third section, text, and register link-->
+        <section class="chooseusername hide">
+            <h2>Choose your Username</h2>
+            <form>
+                <input type="text" placeholder="Your Username">
+            </form>
+            <button class="usernamestep">Confirm your username</button>
+            <p>
+                Your name will only be visible to members of groups in which you participate.
+            </p>
+        </section>
+
+        <section class="choosegender hide">
+
+            <h2>Tell us about you</h2>
+
+            <fieldset class="button-group">
+                <legend>Gender</legend>
+
+                <input type="radio" id="male" name="gender">
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender">
+                <label for="female">Female</label>
+            </fieldset>
+
+            <fieldset class="button-group">
+                <legend>Status</legend>
+
+                <input type="radio" id="school" name="status">
+                <label for="school">School</label>
+
+                <input type="radio" id="study" name="status">
+                <label for="study">Study</label>
+
+                <input type="radio" id="work" name="status">
+                <label for="work">Work</label>
+            </fieldset>
+
+            <fieldset class="button-group">
+
+                <legend>Born in the</legend>
+
+                <input type="radio" id="sixties" name="era">
+                <label for="sixties">60’s</label>
+                <input type="radio" id="seventies" name="era">
+                <label for="seventies">70’s</label>
+                <input type="radio" id="eighties" name="era">
+                <label for="eighties">80’s</label>
+                <input type="radio" id="ninties" name="era">
+                <label for="ninties">90’s</label>
+                <input type="radio" id="zeroes" name="era">
+                <label for="zeroes">00’s</label>
+                
+            </fieldset>
+
+            <form action="../pages/groups.html">
+                <button class="submit" type="submit">
+                    Explore snappthis!
+                </button>
+            </form>
+
         </section>
 
     </main>
