@@ -180,16 +180,6 @@ else if (gallery) {
       </li>
     `)
     .join("");
-
-  if (button) {
-    button.addEventListener("click", () => {
-      gallery.classList.toggle("images-grid");
-      gallery.classList.toggle("images-list");
-    });
-  }
-  if (imagerid) {
-    
-  }
 }
 
 /// sticky capture knoppie
