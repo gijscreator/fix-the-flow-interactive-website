@@ -550,7 +550,7 @@ footer {
 
   nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     width: 90vw;
 
   }
