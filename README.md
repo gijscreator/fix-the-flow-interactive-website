@@ -20,7 +20,7 @@ Hieronder heb ik een kort filmpje toegevoegd hoe alles eruit ziet en welke inter
 
 ## Sign up pagina
 
-https://github.com/gijscreator/fix-the-flow-interactive-website/blob/main/assets/ScreenRecording_12-17-2025%2010-12-14_1.webm
+<video controls src="https://github.com/gijscreator/fix-the-flow-interactive-website/blob/main/assets/ScreenRecording_12-17-2025%2010-12-14_1-2.mp4" title="Title"></video>
 
 
 
